@@ -1,2 +1,3 @@
-# mern
+# MERN
+
 Learning the MERN stack

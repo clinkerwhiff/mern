@@ -47,7 +47,7 @@ const MyPostWidget = ({ picturePath }) => {
         }
         const response = await fetch(`http://localhost:3001/posts`, {
             method: "POST",
-            headers: { Authorization: `Bearer {token}` },
+            headers: { Authorization: `Bearer ${token}` },
             body: formData
         });
         const posts = await response.json();
@@ -66,7 +66,7 @@ const MyPostWidget = ({ picturePath }) => {
                     value={post}
                     sx={{
                         width: "100%",
-                        backgroudColor: palette.neutral.light,
+                        backgroundColor: palette.neutral.light,
                         borderRadius: "2rem",
                         padding: "1rem 2rem"
                     }}
@@ -122,11 +122,12 @@ const MyPostWidget = ({ picturePath }) => {
             <FlexBetween>
                 <FlexBetween
                     gap="0.25rem"
-                    onClick={() => setIsImage(!isImage)}>
+                    onClick={() => setIsImage(!isImage)}
+                >
                     <ImageOutlined sx={{ color: mediumMain }} />
                     <Typography
                         color={mediumMain}
-                        sx={{"&:hover": { cursor: "pointer", color: medium }}}
+                        sx={{ "&:hover": { cursor: "pointer", color: medium } }}
                     >
                         Image
                     </Typography>
